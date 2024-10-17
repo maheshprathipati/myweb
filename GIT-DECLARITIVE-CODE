@@ -14,7 +14,7 @@ PATH = "/bin:&PATH"
         }
 stage("build build process") {
 steps{
-sh "mvn cleane package"
+sh "mvn clean package"
 }
 }
 
