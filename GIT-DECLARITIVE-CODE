@@ -1,5 +1,8 @@
 pipeline {
     agent any
+environment {
+PATH = "/bin:&PATH"
+}
     stages 
     {
         stage("git checkout") 
@@ -9,5 +12,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/maheshprathipati/REPO.git'
             }
         }
+stage("build build process") {
+steps{
+sh "mvn cleane package"
+}
+}
+
     }
 }
