@@ -17,6 +17,11 @@ steps{
 sh "mvn clean package"
 }
 }
+stage ("deploying to test system") {
+steps {
+sh "scp target/gamutkart.war ubuntu@172.31.16.76:/home/ubuntu/tm/apache-tomcat-9.0.94/webapps"
+}
+}
 
     }
 }
